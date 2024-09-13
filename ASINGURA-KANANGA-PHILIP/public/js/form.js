@@ -109,7 +109,7 @@ form.addEventListener('submit',(e)=>{
         validFields = false
     }
     if( to === ''){
-        toErr.textContent= "Invalid City"
+        toErr.textContent= "Invalid CitY"
         validFields = false
     }
     
