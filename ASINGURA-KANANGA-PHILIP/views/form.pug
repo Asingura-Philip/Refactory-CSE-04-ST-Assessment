@@ -1,0 +1,74 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='../css/form.css')
+  title Form
+header
+  nav
+    img#head(src='../images/Header.PNG' alt='Header')
+main#main
+  #upper
+    form#form(action='/form' method='post')
+      .fields
+        h2.fieldhead PASSENGER INFORMATION
+        label.label(for='') Full Name *
+        input#fullname(type='text' name='fullname')
+        p#nameError
+        br
+        label.label(for='') Gender
+        select#gender(name='gender')
+          option(value='') --Select--
+          option(value='male') MALE
+          option(value='female') FEMALE
+        p#genderError
+        br
+        label.label(for='') Date of Birth
+        input#dob(type='date' name='DOB')
+        p#dobError
+        br
+        label.label(for='') Nationality
+        input#nationality(type='text' name='nationality')
+        p#nationalityError
+        br
+      .fields
+        h2.fieldhead CONTACT INFORMATION
+        label.label(for='') Phone Number
+        input#contact(type='text' name='contact')
+        p#contactError
+        br
+        label.label(for='') Email Address
+        input#email(type='text' name='email')
+        p#emailError
+        br
+        label.label(for='') P.O.BOX Number
+        input#box(type='text' name='POBox')
+        p#boxError
+        br
+        label.label(for='') Emergency Phone Number
+        input#econtact(type='text' name='econtact')
+        p#econtactError
+        br
+      .fields
+        h2.fieldhead FLIGHT INFORMATION
+        label.label(for='') Passport Number
+        input#passport(type='text' name='passport')
+        p#passportError
+        br
+        label.label(for='') Visa Document
+        input#visa(type='file' name='visa')
+        p#visaError
+        br
+        label.label(for='') Departure City
+        input#from(type='text' name='departureCity')
+        p#fromError
+        br
+        label.label(for='') Destination City
+        input#to(type='text' name='destinationCity')
+        p#toError
+        br
+  #lower
+    #success
+    #sub
+      input#submitBtn(type='submit' value='SUBMIT' form='form')
+script(src='../js/form.js')
