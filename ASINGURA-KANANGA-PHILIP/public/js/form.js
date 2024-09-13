@@ -1,17 +1,18 @@
 const form = document.getElementById('form')
 
-let nameErr = document.getElementById('nameError')
-let genderErr = document.getElementById('genderError')
-let dobErr = document.getElementById('dobError')
-let nationalityErr = document.getElementById('nationalityError')
-let contactErr = document.getElementById('contactError')
-let emailErr = document.getElementById('emailError')
-let boxErr = document.getElementById('boxError')
-let econtactErr = document.getElementById('econtactError')
-let passportErr = document.getElementById('passportError')
-let visaErr = document.getElementById('visaError')
-let fromErr = document.getElementById('fromError')
-let toErr = document.getElementById('toError')
+
+const nameErr = document.getElementById('nameError')
+const genderErr = document.getElementById('genderError')
+const dobErr = document.getElementById('dobError')
+const nationalityErr = document.getElementById('nationalityError')
+const contactErr = document.getElementById('contactError')
+const emailErr = document.getElementById('emailError')
+const boxErr = document.getElementById('boxError')
+const econtactErr = document.getElementById('econtactError')
+const passportErr = document.getElementById('passportError')
+const visaErr = document.getElementById('visaError')
+const fromErr = document.getElementById('fromError')
+const toErr = document.getElementById('toError')
 
 const success = document.getElementById('success')
 
@@ -21,7 +22,8 @@ const success = document.getElementById('success')
 
 
 form.addEventListener('submit',(e)=>{
-    validFields = true
+    
+
     const fName = document.getElementById('fullname').value
     const gender = document.getElementById('gender').value
     const dob = document.getElementById('dob').value
@@ -50,31 +52,32 @@ form.addEventListener('submit',(e)=>{
     toErr.textContent = ''
 
 
+    const validEmail =/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+    // let age = dob - Date.now()
 
 
 
-
-
-
+    let validFields = true
 
     if(fName === ''){
-        nameErr.textContent= "Invalid name"
+        nameErr.textContent = "Invalid name"
         validFields = false
     }
     if(gender === ''){
-        nameErr.textContent= "Please enter gender"
+        genderErr.textContent= "Please enter gender"
         validFields = false
     }
     if(nation === ''){
-        nameErr.textContent= "Please enter country"
+        nationalityErr.textContent= "Please enter country"
         validFields = false
     }
     if(box === ''){
-        nameErr.textContent= "Please enter POBOX"
+        boxErr.textContent= "Please enter POBOX"
         validFields = false
     }
     if(visa === ''){
-        nameErr.textContent= "please add file"
+        visaErr.textContent= "please add file"
         validFields = false
     }
 
@@ -86,15 +89,15 @@ form.addEventListener('submit',(e)=>{
         validFields = false
     }
     if( phone === ''){
-        phoneErr.textContent= "Invalid contact"
+        contactErr.textContent= "Invalid contact"
         validFields = false
     }
-    if( email === ''){
+    if( !validEmail.test(email)){
         emailErr.textContent= "Invalid email"
         validFields = false
     }
     if( ephone === ''){
-        ephoneErr.textContent= "Invalid contact"
+        econtactErr.textContent= "Invalid contact"
         validFields = false
     }
     if( passport === ''){
@@ -110,10 +113,10 @@ form.addEventListener('submit',(e)=>{
         validFields = false
     }
     
-    success.textContent = "Form has been submitted successfully"
-    success.style.border = "solid 2px green"
+    // success.textContent = "Form has been submitted successfully"
+    // success.style.border = "solid 2px green"
 
-    if(!validFields){
+    if(validFields === false){
         e.preventDefault()
     }
 })
