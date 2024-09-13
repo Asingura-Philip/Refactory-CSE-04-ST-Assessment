@@ -1,6 +1,8 @@
 body{
     height: 90vh;
     font-size: 16px;
+    margin: 0;
+    
 }
 
 #head{
@@ -18,28 +20,32 @@ body{
     display: flex;
     height: 100%;
 }
-input{
+input,select{
     width: 80%;
-    height: 55px;
+    height: 40px;
+    border: 1px solid;
+    text-align: center;
 }
 p{
     margin: 0;
     margin-right: 70%;
+    color: red;
 }
 .label{
     margin-right: 60%;
 }
 .fieldhead{
-    border-bottom: dotted 1px red;
+    border-bottom: dotted 1px #c00000;
     width: 100%;
     text-align: center;
+    color: #c00000;
 }
 
 .fields{
     display: flex;
     flex-direction: column;
     width: 33%;
-    border: dotted 1px red;
+    border: dotted 2px #c00000;
     align-items: center;
     justify-content: center;
 }
@@ -58,7 +64,7 @@ p{
     height: 100%;
     display: flex;
     text-align: center;
-    border: solid 1px green;
+    /* border: solid 1px green; */
 }
 #sub{
     width: 35%;
@@ -67,4 +73,5 @@ p{
 #submitBtn{
     width: 90%;
     height: 100%;
+    background-color: #c00000;
 }
