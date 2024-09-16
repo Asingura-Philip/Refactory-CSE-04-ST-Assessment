@@ -8,6 +8,7 @@ router.get('/form',(req,res)=>{
 
 router.post('/form',(req,res)=>{
     const newFlight = new Flight(req.body)
+    // console.log(req.body)
     newFlight.save()
     // res.redirect('/form')
 })
